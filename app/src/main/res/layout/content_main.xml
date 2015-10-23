@@ -7,10 +7,48 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/buttons_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:onClick="addDelay"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="@string/slower"
+            android:id="@+id/button_plus"/>
+
+        <Button
+            android:onClick="reduceDelay"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/faster"
+            android:id="@+id/button_minus"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="0 ms delay"
+            android:background="@drawable/purple_with_borders"
+            android:id="@+id/duration_view"
+            android:gravity="center"
+            android:layout_margin="6dp"/>
+
+    </LinearLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
+        android:layout_below="@id/buttons_bar"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"/>
+
 </RelativeLayout>

@@ -1,7 +1,11 @@
-package antoniocappiello.com.viewpagerwithcustomscroller;/*
- * Created by a.cappiello on 23-10-2015 - 16:26.
- * Copyright (c) 2015. Coolblue. All rights reserved.
+/*
+ * Copyright (c) 2015. Antonio Cappiello
+ * www.antoniocappiello.com
  */
+
+package antoniocappiello.com.viewpagerwithcustomscroller;
+
+
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,10 +16,16 @@ import android.widget.TextView;
 
 public class DemoPageFragment extends Fragment {
 
-    private final int position;
+    public static final String POSITION = "POSITION";
+    private int position;
 
-    public DemoPageFragment(int position) {
-        this.position = position;
+    public DemoPageFragment() {
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        position = getArguments().getInt(POSITION);
     }
 
     @Override
@@ -24,7 +34,7 @@ public class DemoPageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.demo_page_fragment, container, false);
         TextView pagePositionTextView = (TextView) view.findViewById(R.id.page_position);
-        pagePositionTextView.setText("PAGE " + position);
+        pagePositionTextView.setText("" + position);
         return view;
 
     }

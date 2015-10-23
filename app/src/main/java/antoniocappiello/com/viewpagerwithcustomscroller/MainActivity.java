@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2015. Antonio Cappiello
+ * www.antoniocappiello.com
+ */
+
 package antoniocappiello.com.viewpagerwithcustomscroller;
 
 import android.os.Bundle;
@@ -5,15 +10,16 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.LinearInterpolator;
+import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final int SCROLL_DURATION = 600; // time in milliseconds
+    private CustomScroller customScroller;
+    private TextView durationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +34,13 @@ public class MainActivity extends AppCompatActivity {
         PagerAdapter mAdapter = new DemoPagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mAdapter);
 
+        durationView = (TextView) findViewById(R.id.duration_view);
+
     }
 
     private void setCustomScrollerToViewPager(ViewPager mPager) {
         try {
-            CustomScroller customScroller = new CustomScroller(this, new LinearInterpolator(), SCROLL_DURATION);
+            customScroller = new CustomScroller(this, new LinearInterpolator(), 0);
             Field mScroller = ViewPager.class.getDeclaredField("mScroller");
             mScroller.setAccessible(true);
             mScroller.set(mPager, customScroller);
@@ -44,25 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    public void addDelay(View view){
+        customScroller.setCustomDuration(customScroller.getCustomDuration() + 100);
+        durationView.setText(customScroller.getCustomDuration() + getString(R.string.delay));
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void reduceDelay(View view){
+        customScroller.setCustomDuration(customScroller.getCustomDuration() - 100);
+        durationView.setText(customScroller.getCustomDuration() + getString(R.string.delay));
     }
+
 }
