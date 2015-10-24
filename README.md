@@ -1,6 +1,8 @@
-Sample app which shows a view pager with customisable speed and animation.
+## View pager with custom scroller
 
-Try it from from google play:
+This is just a sample app which shows a view pager with customisable speed and animation.
+
+Try it for free on google play:
 https://play.google.com/store/apps/details?id=antoniocappiello.com.viewpagerwithcustomscroller
 
-Follow me on http://antoniocappiello.com/ for this about androids.
+Follow me on http://antoniocappiello.com/ .
