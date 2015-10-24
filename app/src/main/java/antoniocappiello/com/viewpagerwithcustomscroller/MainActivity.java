@@ -54,12 +54,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void addDelay(View view){
         customScroller.setCustomDuration(customScroller.getCustomDuration() + 100);
-        durationView.setText(customScroller.getCustomDuration() + getString(R.string.delay));
+        durationView.setText(customScroller.getCustomDuration() + " ms");
     }
 
     public void reduceDelay(View view){
         customScroller.setCustomDuration(customScroller.getCustomDuration() - 100);
-        durationView.setText(customScroller.getCustomDuration() + getString(R.string.delay));
+        durationView.setText(customScroller.getCustomDuration() + " ms");
     }
 
 }
