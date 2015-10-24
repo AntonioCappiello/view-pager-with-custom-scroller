@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">View Pager With Custom Scroller</string>
-    <string name="faster">faster</string>
-    <string name="slower">slower</string>
-    <string name="delay">" ms delay"</string>
+    <string name="scroll_duration">Scroll duration</string>
 </resources>
