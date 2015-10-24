@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2015. Antonio Cappiello
+  ~ www.antoniocappiello.com
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/scroll_duration"/>
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="0 ms"
+        android:background="@drawable/white_with_borders"
+        android:id="@+id/duration_view"
+        android:gravity="center"
+        android:layout_margin="6dp"/>
+
+    <ImageView
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/minus"
+        android:onClick="reduceDelay"
+        android:layout_width="35dp"
+        android:layout_height="match_parent"
+        android:text="-"
+        android:id="@+id/button_minus"/>
+
+    <ImageView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/plus"
+        android:onClick="addDelay"
+        android:layout_width="35dp"
+        android:layout_height="match_parent"
+        android:text="+"
+        android:id="@+id/button_plus"/>
+
+
+</LinearLayout>
