@@ -8,13 +8,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:orientation="horizontal">
 
     <TextView
         android:layout_width="0dp"
         android:layout_weight="1"
+        android:gravity="center_vertical"
         android:layout_height="45dp"
-        android:gravity="center"
         android:text="@string/scroll_duration"/>
 
     <TextView
@@ -22,8 +24,7 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="0 ms"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:background="@drawable/white_with_borders"
         android:id="@+id/duration_view"
         android:gravity="center"
@@ -40,7 +41,6 @@
 
     <ImageView
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:src="@drawable/plus"
         android:onClick="addDelay"
         android:layout_width="35dp"

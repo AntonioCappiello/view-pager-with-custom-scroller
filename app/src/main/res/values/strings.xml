@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">View Pager With Custom Scroller</string>
     <string name="scroll_duration">Scroll duration:</string>
+    <string name="animation_type">Animation type:</string>
 </resources>
